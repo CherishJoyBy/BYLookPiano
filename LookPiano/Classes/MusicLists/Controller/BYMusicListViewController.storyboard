@@ -57,7 +57,7 @@
                                                 <rect key="frame" x="0.0" y="41" width="53.5" height="34"/>
                                                 <color key="backgroundColor" red="0.90374028497409331" green="0.90374028497409331" blue="0.90374028497409331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="53.5" id="cVz-28-JtW"/>
+                                                    <constraint firstAttribute="width" priority="999" constant="53.5" id="cVz-28-JtW"/>
                                                 </constraints>
                                                 <state key="normal" title="简单">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
