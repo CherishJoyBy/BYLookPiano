@@ -27,7 +27,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veZ-h6-hNW" userLabel="RightView" customClass="BYRIghtChooseView">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="veZ-h6-hNW" userLabel="RightView">
                                 <rect key="frame" x="568" y="0.0" width="220" height="320"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="筛选" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PGI-2h-lIt">
@@ -54,7 +54,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2xG-kw-k2T">
-                                                <rect key="frame" x="0.0" y="41" width="53.5" height="34"/>
+                                                <rect key="frame" x="0.0" y="41" width="53.5" height="30"/>
                                                 <color key="backgroundColor" red="0.90374028497409331" green="0.90374028497409331" blue="0.90374028497409331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" priority="999" constant="53.5" id="cVz-28-JtW"/>
@@ -70,7 +70,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMB-4u-7nU" userLabel="一般">
-                                                <rect key="frame" x="63.5" y="41" width="53" height="34"/>
+                                                <rect key="frame" x="63.5" y="41" width="53" height="30"/>
                                                 <color key="backgroundColor" red="0.90374028500000003" green="0.90374028500000003" blue="0.90374028500000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="一般">
                                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -83,7 +83,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3u-Xt-kti">
-                                                <rect key="frame" x="126.5" y="41" width="53.5" height="34"/>
+                                                <rect key="frame" x="126.5" y="41" width="53.5" height="30"/>
                                                 <color key="backgroundColor" red="0.90374028500000003" green="0.90374028500000003" blue="0.90374028500000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                 <color key="tintColor" red="0.90374028500000003" green="0.90374028500000003" blue="0.90374028500000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -102,6 +102,8 @@
                                             <constraint firstItem="D3u-Xt-kti" firstAttribute="width" secondItem="2xG-kw-k2T" secondAttribute="width" id="8rs-aF-Sxx"/>
                                             <constraint firstAttribute="height" constant="70" id="9O3-Mk-am3"/>
                                             <constraint firstItem="jbd-gD-aKo" firstAttribute="top" secondItem="SH5-t2-Yvr" secondAttribute="top" id="Df8-Ab-cTO"/>
+                                            <constraint firstItem="hMB-4u-7nU" firstAttribute="height" secondItem="2xG-kw-k2T" secondAttribute="height" id="Je1-Zg-Vgh"/>
+                                            <constraint firstItem="D3u-Xt-kti" firstAttribute="height" secondItem="2xG-kw-k2T" secondAttribute="height" id="NJs-3U-Fxk"/>
                                             <constraint firstItem="hMB-4u-7nU" firstAttribute="top" secondItem="2xG-kw-k2T" secondAttribute="top" id="R6s-kt-ZXD"/>
                                             <constraint firstItem="hMB-4u-7nU" firstAttribute="width" secondItem="2xG-kw-k2T" secondAttribute="width" id="Z4A-CN-fJh"/>
                                             <constraint firstItem="D3u-Xt-kti" firstAttribute="leading" secondItem="hMB-4u-7nU" secondAttribute="trailing" constant="10" id="cIg-yK-kSI"/>
@@ -205,8 +207,10 @@
                                     <constraint firstAttribute="trailing" secondItem="iMs-At-BMe" secondAttribute="trailing" id="dHZ-jE-6xl"/>
                                     <constraint firstItem="EO7-LU-Hxs" firstAttribute="width" secondItem="veZ-h6-hNW" secondAttribute="width" multiplier="0.5" id="ikg-bb-zlO"/>
                                     <constraint firstAttribute="width" constant="220" id="qv4-12-g96"/>
+                                    <constraint firstItem="EO7-LU-Hxs" firstAttribute="height" secondItem="2xG-kw-k2T" secondAttribute="height" id="sut-js-8l5"/>
                                     <constraint firstItem="PGI-2h-lIt" firstAttribute="leading" secondItem="veZ-h6-hNW" secondAttribute="leading" constant="20" id="uxn-vI-I6c"/>
                                     <constraint firstItem="5PM-o0-Mak" firstAttribute="width" secondItem="2xG-kw-k2T" secondAttribute="width" id="w1b-vm-9h1"/>
+                                    <constraint firstItem="iMs-At-BMe" firstAttribute="height" secondItem="2xG-kw-k2T" secondAttribute="height" id="wvn-ai-Srx"/>
                                     <constraint firstItem="iMs-At-BMe" firstAttribute="width" secondItem="EO7-LU-Hxs" secondAttribute="width" id="xWF-dn-EM9"/>
                                 </constraints>
                             </view>

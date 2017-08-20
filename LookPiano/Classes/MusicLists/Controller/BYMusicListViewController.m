@@ -62,7 +62,7 @@ static NSString *BYMusicListCellId = @"BYMusicListCellId";
 {
 //     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(568, 0, 200, 320)];
     self.rightChooseView.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:self.rightChooseView];
+//    [self.view addSubview:self.rightChooseView];
 }
 
 - (void)setUpNav
