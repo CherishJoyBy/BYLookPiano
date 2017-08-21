@@ -36,6 +36,9 @@
 		49327AA61F41853200B7EB2A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49327AA41F41853200B7EB2A /* LaunchScreen.storyboard */; };
 		49327AC81F41910000B7EB2A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 49327AC11F41910000B7EB2A /* AppDelegate.m */; };
 		49327AC91F41910000B7EB2A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 49327AC41F41910000B7EB2A /* main.m */; };
+		49D401281F4B3B5A00BE31D1 /* BYRightChooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D401271F4B3B5A00BE31D1 /* BYRightChooseView.m */; };
+		49D4012C1F4B3CE200BE31D1 /* BYRightChooseView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 49D4012B1F4B3CE200BE31D1 /* BYRightChooseView.xib */; };
+		49D4012F1F4B43FE00BE31D1 /* UIView+BYExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 49D4012E1F4B43FE00BE31D1 /* UIView+BYExtension.m */; };
 		E6DB0DBF9F2030418D46C37D /* libPods-LookPiano.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B49EAB5DAE5C52301F814BD /* libPods-LookPiano.a */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +97,11 @@
 		49327AC41F41910000B7EB2A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Classes/Other/main.m; sourceTree = "<group>"; };
 		49327AC51F41910000B7EB2A /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		49AFB1CEA5FF8DA5AB7C5A30 /* Pods-LookPiano.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookPiano.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LookPiano/Pods-LookPiano.debug.xcconfig"; sourceTree = "<group>"; };
+		49D401261F4B3B5A00BE31D1 /* BYRightChooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYRightChooseView.h; sourceTree = "<group>"; };
+		49D401271F4B3B5A00BE31D1 /* BYRightChooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYRightChooseView.m; sourceTree = "<group>"; };
+		49D4012B1F4B3CE200BE31D1 /* BYRightChooseView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BYRightChooseView.xib; sourceTree = "<group>"; };
+		49D4012D1F4B43FE00BE31D1 /* UIView+BYExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+BYExtension.h"; sourceTree = "<group>"; };
+		49D4012E1F4B43FE00BE31D1 /* UIView+BYExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+BYExtension.m"; sourceTree = "<group>"; };
 		9B49EAB5DAE5C52301F814BD /* libPods-LookPiano.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-LookPiano.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -363,6 +371,9 @@
 			children = (
 				492682591F4745920059C4DD /* BYMusicListCell.h */,
 				4926825A1F4745920059C4DD /* BYMusicListCell.m */,
+				49D401261F4B3B5A00BE31D1 /* BYRightChooseView.h */,
+				49D401271F4B3B5A00BE31D1 /* BYRightChooseView.m */,
+				49D4012B1F4B3CE200BE31D1 /* BYRightChooseView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -419,6 +430,8 @@
 			children = (
 				4926823B1F44B0650059C4DD /* UIBarButtonItem+BYExtension.h */,
 				4926823C1F44B0650059C4DD /* UIBarButtonItem+BYExtension.m */,
+				49D4012D1F4B43FE00BE31D1 /* UIView+BYExtension.h */,
+				49D4012E1F4B43FE00BE31D1 /* UIView+BYExtension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -517,6 +530,7 @@
 				49327AA61F41853200B7EB2A /* LaunchScreen.storyboard in Resources */,
 				492682641F4774DA0059C4DD /* BYMusicPlayerViewController.storyboard in Resources */,
 				492682191F4199EB0059C4DD /* BYConnectViewController.storyboard in Resources */,
+				49D4012C1F4B3CE200BE31D1 /* BYRightChooseView.xib in Resources */,
 				4926822B1F41A9AC0059C4DD /* BYMusicListViewController.storyboard in Resources */,
 				49327AA31F41853200B7EB2A /* Assets.xcassets in Resources */,
 				4926821E1F419F460059C4DD /* BYHomeViewController.storyboard in Resources */,
@@ -584,6 +598,7 @@
 				492682141F4195AB0059C4DD /* BYConnectViewController.m in Sources */,
 				4926824B1F45F9200059C4DD /* BYMusicTypeViewController.m in Sources */,
 				4926825B1F4745920059C4DD /* BYMusicListCell.m in Sources */,
+				49D4012F1F4B43FE00BE31D1 /* UIView+BYExtension.m in Sources */,
 				492682301F41AB690059C4DD /* BLEConnect.m in Sources */,
 				4926824D1F45F9200059C4DD /* BYMusicType.m in Sources */,
 				492682511F45FAC10059C4DD /* BYHome.m in Sources */,
@@ -594,6 +609,7 @@
 				492682581F4745660059C4DD /* BYMusicList.m in Sources */,
 				4926821C1F419EF00059C4DD /* BYHomeViewController.m in Sources */,
 				4926820F1F4193B50059C4DD /* BYNavigationController.m in Sources */,
+				49D401281F4B3B5A00BE31D1 /* BYRightChooseView.m in Sources */,
 				4926824E1F45F9200059C4DD /* BYMusicTypeCell.m in Sources */,
 				492682291F41A99F0059C4DD /* BYMusicListViewController.m in Sources */,
 				492682171F4197EA0059C4DD /* BYTabBarController.m in Sources */,

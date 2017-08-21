@@ -12,14 +12,18 @@
 #import <MMDrawerController.h>
 #import <UIViewController+MMDrawerController.h>
 #import "BYMusicPlayerViewController.h"
+#import "BYRightChooseView.h"
 
 
-@interface BYMusicListViewController ()<UICollectionViewDataSource, UICollectionViewDelegate>
+@interface BYMusicListViewController ()<UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet UICollectionView *musicListsCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *musicListFlowLayout;
-@property (weak, nonatomic) IBOutlet UIView *rightChooseView;
+//@property (weak, nonatomic) IBOutlet UIView *rightChooseView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftConstraint;
+//@property (nonatomic, weak) UIImageView *shadowView;
+@property (nonatomic, weak) UIView *shadowView2;
+@property (nonatomic, weak) BYRightChooseView *rightChooseView;
 
 @end
 
@@ -39,30 +43,45 @@ static NSString *BYMusicListCellId = @"BYMusicListCellId";
     [self setUpRightView];
 }
 
-//- (void)viewWillAppear:(BOOL)animated
-//{
-//    [super viewWillAppear:animated];
-//    
-//}
-//
-//- (void)viewDidAppear:(BOOL)animated
-//{
-//    [super viewDidAppear:animated];
-//    
-//}
-//
-//- (void)viewWillDisappear:(BOOL)animated
-//{
-//    [super viewWillDisappear:animated];
-//    [self.mm_drawerController closeDrawerAnimated:YES completion:nil];
-//}
-
 #pragma mark - PrivateMethod
 - (void)setUpRightView
 {
-//     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(568, 0, 200, 320)];
+    // 遮罩imageView
+//    UIImageView *shadowView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 568, 320)];
+    UIView *shadowView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 568, 320)];
+    self.shadowView2 = shadowView2;
+    self.shadowView2.userInteractionEnabled = YES;
+//    self.shadowView2.backgroundColor = [UIColor blackColor];
+    self.shadowView2.alpha = 0;
+//    self.shadowView2.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
+    
+    UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shadowViewTapClick:)];
+    tapGesturRecognizer.delegate = self;
+    [shadowView2 addGestureRecognizer:tapGesturRecognizer];
+    
+    // 筛选View
+    BYRightChooseView *rightChooseView = [BYRightChooseView viewFromXib];
+    self.rightChooseView = rightChooseView;
+    self.rightChooseView.frame = CGRectMake(568, 0, 220, 320);
     self.rightChooseView.backgroundColor = [UIColor whiteColor];
-//    [self.view addSubview:self.rightChooseView];
+    
+//    UITapGestureRecognizer *tapGesturRecognizerChoose = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseViewTapClick:)];
+//    [rightChooseView addGestureRecognizer:tapGesturRecognizerChoose];
+    
+//    self.shadowView = shadowView;
+//    [self.shadowView  addSubview:self.rightChooseView];
+    [self.shadowView2  addSubview:self.rightChooseView];
+    [[UIApplication sharedApplication].keyWindow addSubview:self.shadowView2];
+    
+}
+
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
+{
+    if ([touch.view isDescendantOfView:self.rightChooseView])
+    {
+        return NO;
+    }
+    return YES;
 }
 
 - (void)setUpNav
@@ -88,47 +107,54 @@ static NSString *BYMusicListCellId = @"BYMusicListCellId";
 //    [button1.layer setBorderWidth:1];
 //    [button1.layer setMasksToBounds:YES];
     
-    UIButton *btn = [[UIButton alloc] init];
-    btn.layer.masksToBounds = YES;
-    btn.layer.cornerRadius = 5;
-    
 }
 
 - (IBAction)reChoose:(UIButton *)sender
 {
+    BYLogFunc
 }
 
 - (void)chooseClick
 {
     BYLogFunc
-//    [self.mm_drawerController toggleDrawerSide:MMDrawerSideRight animated:YES completion:nil];
     
-    // 该方法可以设置从右到左移动的动画
-//    [UIView animateWithDuration:0.2 animations:^{
-//        self.rightChooseView.frame = CGRectMake(368, 0, 200, 320);
-//        //        self.navigationController.navigationBar.alpha = 0;
-//    }];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.rightChooseView.frame = CGRectMake(348, 0, 220, 320);
+    }];
+//    self.shadowView.alpha = 1;
+//    self.shadowView.image = [UIImage imageNamed:@"bg"];
+//    self.shadowView2.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256)/255.0) green:((float)arc4random_uniform(256)/255.0) blue:((float)arc4random_uniform(256)/255.0) alpha:0.6];
+    self.shadowView2.alpha = 0.6;
     
-     // 设置约束 和 按钮状态
-    if (self.leftConstraint.constant == 0)
-    {
-        // 目前显示的是list界面, 点击按钮后要切换为right界面
-        self.leftConstraint.constant = - 220;
-    }
-    else
-    {
-        // 目前显示的是right界面, 点击按钮后要切换为list界面
-        self.leftConstraint.constant = 0;
-    }
+//    [self setBlurEffect:self.shadowView];
+}
+
+- (void)setBlurEffect:(UIImageView *)imgView
+{
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     
-    [self.view bringSubviewToFront:self.rightChooseView];
-    // 动画
-    [UIView animateWithDuration:0.25 animations:^{
-        // 强制刷新 : 让最新设置的约束值马上应用到UI控件上
-        // 会刷新到self.view内部的所有子控件
-        [self.view layoutIfNeeded];
+    blurEffectView.frame = imgView.frame;
+    [self.view addSubview:blurEffectView];
+}
+
+- (void)shadowViewTapClick:(id)tap
+{
+    BYLogFunc
+//     self.shadowView.alpha = 0;
+    self.shadowView2.alpha = 0;
+//    self.shadowView2.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
+    self.shadowView2.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256)/255.0) green:((float)arc4random_uniform(256)/255.0) blue:((float)arc4random_uniform(256)/255.0) alpha:0];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.rightChooseView.frame = CGRectMake(568, 0, 220, 320);
     }];
 }
+
+//- (void)chooseViewTapClick:(id)tap
+//{
+//    // 主要为了屏蔽父视图的点击事件
+//    BYLogFunc
+//}
 
 - (void)connectFailureClick
 {
