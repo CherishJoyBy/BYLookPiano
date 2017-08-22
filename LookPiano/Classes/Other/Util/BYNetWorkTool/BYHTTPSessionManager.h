@@ -13,13 +13,13 @@
 
  @param responseObject 请求成功的响应参数
  */
-typedef void(^BYSuccess) (id responseObject);
+typedef void (^BYSuccess) (id responseObject);
 /**
  请求失败的block
  
  @param error 请求失败的错误参数
  */
-typedef void(^BYFailure) (NSError *error);
+typedef void (^BYFailure) (NSError *error);
 
 @interface BYHTTPSessionManager : AFHTTPSessionManager
 

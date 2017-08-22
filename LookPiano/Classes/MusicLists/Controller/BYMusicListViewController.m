@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftConstraint;
 @property (nonatomic, weak) UIImageView *shadowView;
 @property (nonatomic, weak) BYRightChooseView *rightChooseView;
+@property (nonatomic, assign) int musicListCount;
 
 @end
 
@@ -50,10 +51,12 @@ static NSString *BYMusicListCellId = @"BYMusicListCellId";
     self.shadowView.userInteractionEnabled = YES;
     self.shadowView.alpha = 0;
     
-    UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shadowViewTapClick:)];
+    // 手势
+    UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shadowViewTapClick)];
     tapGesturRecognizer.delegate = self;
     [self.shadowView addGestureRecognizer:tapGesturRecognizer];
     
+    // 模糊
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     
@@ -67,6 +70,19 @@ static NSString *BYMusicListCellId = @"BYMusicListCellId";
     self.rightChooseView.frame = CGRectMake(568, 0, 220, 320);
     self.rightChooseView.backgroundColor = [UIColor whiteColor];
     
+    // block传值
+    self.rightChooseView.chooseFinishBlcok = ^(int musicListCount, BOOL isCloseRightView) {
+        
+        if (musicListCount >= 0)
+        {
+            self.musicListCount = musicListCount;
+            [self.musicListsCollectionView reloadData];
+        }
+        if (isCloseRightView)
+        {
+            [self shadowViewTapClick];
+        }
+    };
     
     [blurEffectView addSubview:self.rightChooseView];
 //    [self.shadowView  addSubview:self.rightChooseView];
@@ -74,6 +90,7 @@ static NSString *BYMusicListCellId = @"BYMusicListCellId";
     
 }
 
+// 子视图不响应父视图的手势
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {
     if ([touch.view isDescendantOfView:self.rightChooseView])
@@ -137,13 +154,15 @@ static NSString *BYMusicListCellId = @"BYMusicListCellId";
     [self.shadowView addSubview:blurEffectView];
 }
 
-- (void)shadowViewTapClick:(id)tap
+- (void)shadowViewTapClick
 {
     BYLogFunc
      self.shadowView.alpha = 0;
     [UIView animateWithDuration:0.2 animations:^{
         self.rightChooseView.frame = CGRectMake(568, 0, 220, 320);
     }];
+    
+    BYLog(@"self.musicListCount = %d",self.musicListCount);
 }
 
 //- (void)chooseViewTapClick:(id)tap
@@ -209,7 +228,11 @@ static NSString *BYMusicListCellId = @"BYMusicListCellId";
 #pragma mark - CollecitonView DataSource
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section
 {
-    return 63;
+    if (self.musicListCount)
+    {
+        return self.musicListCount;
+    }
+    return 20;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath

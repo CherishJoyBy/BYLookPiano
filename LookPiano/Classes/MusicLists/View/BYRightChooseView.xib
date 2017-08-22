@@ -47,6 +47,9 @@
                             <state key="normal" title="简单">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
+                            <state key="selected">
+                                <color key="titleColor" red="1" green="0.077558668959999993" blue="0.1061229724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </state>
                             <userDefinedRuntimeAttributes>
                                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                     <integer key="value" value="3"/>
@@ -140,7 +143,6 @@
                             </userDefinedRuntimeAttributes>
                             <connections>
                                 <action selector="key88Click:" destination="-1" eventType="touchUpInside" id="u2c-Z3-pw5"/>
-                                <action selector="reSetClick:" destination="-1" eventType="touchUpInside" id="STz-PF-Cae"/>
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zbz-pW-uYL">
@@ -210,6 +212,13 @@
                 <constraint firstItem="vS3-Ad-Pe6" firstAttribute="leading" secondItem="Xsf-rw-2IO" secondAttribute="leading" id="vwM-QP-ypg"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="easyBtn" destination="X2X-um-cU0" id="K53-Sk-2Qu"/>
+                <outlet property="hardBtn" destination="QzJ-Tz-Ifv" id="php-Za-iGY"/>
+                <outlet property="key37Btn" destination="Zbz-pW-uYL" id="Cb3-j7-JcS"/>
+                <outlet property="key88Btn" destination="Jt4-Io-I4t" id="nw6-wq-aej"/>
+                <outlet property="normalBtn" destination="Dpr-x3-GEg" id="BCM-fD-3os"/>
+            </connections>
         </view>
     </objects>
 </document>

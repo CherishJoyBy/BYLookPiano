@@ -32,6 +32,9 @@
 // 连接
 @property (nonatomic, weak) UIBarButtonItem *connectItem;
 @property (nonatomic, strong) MMDrawerController *drawerController;
+@property (weak, nonatomic) IBOutlet UILabel *hotListLab;
+@property (weak, nonatomic) IBOutlet UILabel *themeLab;
+@property (weak, nonatomic) IBOutlet UILabel *classificationLab;
 @end
 
 static NSString *BYHomeCellId = @"BYHomeCellId";
@@ -54,6 +57,14 @@ static NSString *BYHomeCellId = @"BYHomeCellId";
 #pragma mark - PrivateMethod
 - (void)setupBtnData
 {
+//    self.hotListLab.lineBreakMode = UILineBreakModeWordWrap;
+    self.hotListLab.numberOfLines = 0;
+    self.themeLab.numberOfLines = 0;
+    self.classificationLab.numberOfLines = 0;
+    self.hotListLab.text = @"MUSIC\n热榜";
+    self.themeLab.text = @"MUSIC\n主题";
+    self.classificationLab.text = @"MUSIC\n类型";
+    
     NSString *URLString = @"api/MusicClassify/getByPid";
     
     [BYHome loadBtnDataWithURLString:URLString successBlock:^(NSArray *btnDataList) {
@@ -158,7 +169,7 @@ static NSString *BYHomeCellId = @"BYHomeCellId";
     self.cycleCollectionView.showsVerticalScrollIndicator = NO;
     self.cycleCollectionView.pagingEnabled = YES;
     self.cycleCollectionView.bounces = NO;
-    
+
     self.cycleFlowLayout.minimumLineSpacing = 0;
     self.cycleFlowLayout.minimumInteritemSpacing = 0;
     self.cycleFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;

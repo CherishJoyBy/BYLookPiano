@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4902842A1F4C9E5400EB3C6F /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 490284291F4C9E5400EB3C6F /* UIButton+Extension.m */; };
 		4926820F1F4193B50059C4DD /* BYNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4926820E1F4193B50059C4DD /* BYNavigationController.m */; };
 		492682141F4195AB0059C4DD /* BYConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 492682131F4195AB0059C4DD /* BYConnectViewController.m */; };
 		492682171F4197EA0059C4DD /* BYTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 492682161F4197EA0059C4DD /* BYTabBarController.m */; };
@@ -44,6 +45,8 @@
 
 /* Begin PBXFileReference section */
 		2EF17B4A75E015D047B75AD2 /* Pods-LookPiano.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LookPiano.release.xcconfig"; path = "Pods/Target Support Files/Pods-LookPiano/Pods-LookPiano.release.xcconfig"; sourceTree = "<group>"; };
+		490284281F4C9E5400EB3C6F /* UIButton+Extension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		490284291F4C9E5400EB3C6F /* UIButton+Extension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
 		4926820D1F4193B50059C4DD /* BYNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYNavigationController.h; sourceTree = "<group>"; };
 		4926820E1F4193B50059C4DD /* BYNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BYNavigationController.m; sourceTree = "<group>"; };
 		492682121F4195AB0059C4DD /* BYConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BYConnectViewController.h; sourceTree = "<group>"; };
@@ -432,6 +435,8 @@
 				4926823C1F44B0650059C4DD /* UIBarButtonItem+BYExtension.m */,
 				49D4012D1F4B43FE00BE31D1 /* UIView+BYExtension.h */,
 				49D4012E1F4B43FE00BE31D1 /* UIView+BYExtension.m */,
+				490284281F4C9E5400EB3C6F /* UIButton+Extension.h */,
+				490284291F4C9E5400EB3C6F /* UIButton+Extension.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -594,6 +599,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				492682371F43DE8D0059C4DD /* BYHTTPSessionManager.m in Sources */,
+				4902842A1F4C9E5400EB3C6F /* UIButton+Extension.m in Sources */,
 				4926823A1F4429540059C4DD /* BYHomeCell.m in Sources */,
 				492682141F4195AB0059C4DD /* BYConnectViewController.m in Sources */,
 				4926824B1F45F9200059C4DD /* BYMusicTypeViewController.m in Sources */,
