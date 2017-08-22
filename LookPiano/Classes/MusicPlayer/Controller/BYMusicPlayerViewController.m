@@ -18,6 +18,14 @@
     [super viewDidLoad];
     
     self.navigationController.navigationBar.alpha = 1.0;
+    UIBarButtonItem *connectItem = [UIBarButtonItem itemWithImage:@"iconDisConnect" highImage:@"iconDisConnect" target:self action:@selector(connectFailureClick)];
+    
+    self.navigationItem.rightBarButtonItem = connectItem;
+}
+
+- (void)connectFailureClick
+{
+    BYLogFunc
 }
 
 - (void)didReceiveMemoryWarning {

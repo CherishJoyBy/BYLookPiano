@@ -24,12 +24,113 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="Rrd-p2-xmY" userLabel="背景图片">
                                 <rect key="frame" x="0.0" y="0.0" width="568" height="320"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="贝多芬" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa2-fr-wVd" userLabel="文字小标题">
+                                <rect key="frame" x="264" y="56" width="40" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icon-180" translatesAutoresizingMaskIntoConstraints="NO" id="btC-wT-kXD" userLabel="中心图">
+                                <rect key="frame" x="214.5" y="100" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="140" id="9f2-9n-OVL"/>
+                                    <constraint firstAttribute="width" constant="140" id="bKc-JB-XgW"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="70"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="致爱丽丝" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQa-ed-A79" userLabel="文字大标题">
+                                <rect key="frame" x="249.5" y="30" width="69.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score:0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="reo-Xa-WpH" userLabel="得分">
+                                <rect key="frame" x="443.5" y="31.5" width="54.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.29999999999999999" translatesAutoresizingMaskIntoConstraints="NO" id="My5-cd-f5f" userLabel="进度条">
+                                <rect key="frame" x="134" y="270" width="300" height="2"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="UhW-qr-yJO"/>
+                                </constraints>
+                                <color key="progressTintColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="trackTintColor" red="0.64885390228426398" green="0.64259000867555705" blue="0.0" alpha="0.7791898544520548" colorSpace="custom" customColorSpace="sRGB"/>
+                            </progressView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="初始时间" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DB9-TH-GkJ">
+                                <rect key="frame" x="88" y="265.5" width="41" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EWd-TL-YIS" userLabel="播放">
+                                <rect key="frame" x="276" y="282" width="16" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="start"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twp-At-5xm">
+                                <rect key="frame" x="240" y="281.5" width="16" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="left"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Qh-Xm-mtc">
+                                <rect key="frame" x="314" y="281.5" width="16" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="right"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kmb-Lb-StO">
+                                <rect key="frame" x="100.5" y="281.5" width="16" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="zan"/>
+                                <state key="selected" image="zan_h"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xua-5d-WJN">
+                                <rect key="frame" x="451.5" y="281.5" width="16" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <state key="normal" image="icon_danqu"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="结束时间" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yh2-29-LRl">
+                                <rect key="frame" x="439" y="265" width="41" height="12"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="yh2-29-LRl" firstAttribute="leading" secondItem="My5-cd-f5f" secondAttribute="trailing" constant="5" id="17o-vh-q19"/>
+                            <constraint firstItem="FQa-ed-A79" firstAttribute="centerX" secondItem="Wd6-CP-8cH" secondAttribute="centerX" id="184-Mr-NVe"/>
+                            <constraint firstItem="0Qh-Xm-mtc" firstAttribute="centerY" secondItem="kmb-Lb-StO" secondAttribute="centerY" id="1ej-1u-CHX"/>
+                            <constraint firstItem="EWd-TL-YIS" firstAttribute="centerX" secondItem="Wd6-CP-8cH" secondAttribute="centerX" id="1vS-FI-L6c"/>
+                            <constraint firstItem="aa2-fr-wVd" firstAttribute="top" secondItem="FQa-ed-A79" secondAttribute="bottom" constant="5" id="2My-NX-RRt"/>
+                            <constraint firstItem="kmb-Lb-StO" firstAttribute="centerX" secondItem="DB9-TH-GkJ" secondAttribute="centerX" id="5jN-sU-ZUR"/>
+                            <constraint firstItem="Xua-5d-WJN" firstAttribute="centerX" secondItem="yh2-29-LRl" secondAttribute="centerX" id="6Yu-qA-9XP"/>
+                            <constraint firstItem="aa2-fr-wVd" firstAttribute="centerX" secondItem="Wd6-CP-8cH" secondAttribute="centerX" id="9vo-b1-1jh"/>
+                            <constraint firstItem="btC-wT-kXD" firstAttribute="centerX" secondItem="Wd6-CP-8cH" secondAttribute="centerX" id="Aqg-NG-Nlz"/>
+                            <constraint firstItem="btC-wT-kXD" firstAttribute="centerY" secondItem="Wd6-CP-8cH" secondAttribute="centerY" constant="10" id="COs-YV-nTe"/>
+                            <constraint firstItem="DB9-TH-GkJ" firstAttribute="trailing" secondItem="My5-cd-f5f" secondAttribute="leading" constant="-5" id="GQt-yV-MlA"/>
+                            <constraint firstItem="EWd-TL-YIS" firstAttribute="top" secondItem="My5-cd-f5f" secondAttribute="bottom" constant="10" id="KwC-sY-XP9"/>
+                            <constraint firstItem="My5-cd-f5f" firstAttribute="centerY" secondItem="DB9-TH-GkJ" secondAttribute="centerY" id="MGc-xo-sAZ"/>
+                            <constraint firstAttribute="trailing" secondItem="reo-Xa-WpH" secondAttribute="trailing" constant="70" id="MN4-jj-GKk"/>
+                            <constraint firstItem="EWd-TL-YIS" firstAttribute="leading" secondItem="twp-At-5xm" secondAttribute="trailing" constant="20" id="R1g-b0-DzX"/>
+                            <constraint firstItem="yh2-29-LRl" firstAttribute="centerY" secondItem="My5-cd-f5f" secondAttribute="centerY" id="UgC-7h-JUe"/>
+                            <constraint firstItem="FQa-ed-A79" firstAttribute="top" secondItem="h3T-C5-Man" secondAttribute="bottom" constant="10" id="Wea-oX-gXK"/>
                             <constraint firstAttribute="trailing" secondItem="Rrd-p2-xmY" secondAttribute="trailing" id="X2x-2b-0r2"/>
+                            <constraint firstItem="My5-cd-f5f" firstAttribute="centerX" secondItem="Wd6-CP-8cH" secondAttribute="centerX" id="Z7J-Lk-xkX"/>
+                            <constraint firstItem="My5-cd-f5f" firstAttribute="top" secondItem="btC-wT-kXD" secondAttribute="bottom" constant="30" id="amM-9z-bz0"/>
+                            <constraint firstItem="Xua-5d-WJN" firstAttribute="centerY" secondItem="kmb-Lb-StO" secondAttribute="centerY" id="amX-K6-4BQ"/>
                             <constraint firstItem="Rrd-p2-xmY" firstAttribute="leading" secondItem="Wd6-CP-8cH" secondAttribute="leading" id="c4l-KI-2Ct"/>
+                            <constraint firstItem="EWd-TL-YIS" firstAttribute="centerY" secondItem="kmb-Lb-StO" secondAttribute="centerY" id="daW-Bs-n0z"/>
                             <constraint firstItem="WqT-FO-qIP" firstAttribute="top" secondItem="Rrd-p2-xmY" secondAttribute="bottom" id="pUv-O9-R0l"/>
+                            <constraint firstItem="0Qh-Xm-mtc" firstAttribute="leading" secondItem="EWd-TL-YIS" secondAttribute="trailing" constant="22" id="sU3-2e-0sZ"/>
+                            <constraint firstItem="twp-At-5xm" firstAttribute="centerY" secondItem="kmb-Lb-StO" secondAttribute="centerY" id="vd1-kP-qVV"/>
+                            <constraint firstItem="reo-Xa-WpH" firstAttribute="baseline" secondItem="FQa-ed-A79" secondAttribute="baseline" id="yHN-fq-HAS"/>
                             <constraint firstItem="Rrd-p2-xmY" firstAttribute="top" secondItem="Wd6-CP-8cH" secondAttribute="top" id="zMA-9j-Kt5"/>
                         </constraints>
                     </view>
@@ -40,6 +141,13 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Icon-180" width="180" height="180"/>
         <image name="bg" width="1920" height="1080"/>
+        <image name="icon_danqu" width="16" height="13"/>
+        <image name="left" width="16" height="16"/>
+        <image name="right" width="16" height="16"/>
+        <image name="start" width="16" height="16"/>
+        <image name="zan" width="16" height="17"/>
+        <image name="zan_h" width="16" height="17"/>
     </resources>
 </document>
