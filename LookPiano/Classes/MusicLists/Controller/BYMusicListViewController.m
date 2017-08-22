@@ -19,10 +19,8 @@
 
 @property (weak, nonatomic) IBOutlet UICollectionView *musicListsCollectionView;
 @property (weak, nonatomic) IBOutlet UICollectionViewFlowLayout *musicListFlowLayout;
-//@property (weak, nonatomic) IBOutlet UIView *rightChooseView;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *leftConstraint;
-//@property (nonatomic, weak) UIImageView *shadowView;
-@property (nonatomic, weak) UIView *shadowView2;
+@property (nonatomic, weak) UIImageView *shadowView;
 @property (nonatomic, weak) BYRightChooseView *rightChooseView;
 
 @end
@@ -47,31 +45,32 @@ static NSString *BYMusicListCellId = @"BYMusicListCellId";
 - (void)setUpRightView
 {
     // 遮罩imageView
-//    UIImageView *shadowView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 568, 320)];
-    UIView *shadowView2 = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 568, 320)];
-    self.shadowView2 = shadowView2;
-    self.shadowView2.userInteractionEnabled = YES;
-//    self.shadowView2.backgroundColor = [UIColor blackColor];
-    self.shadowView2.alpha = 0;
-//    self.shadowView2.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
+    UIImageView *shadowView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 568, 320)];
+    self.shadowView = shadowView;
+    self.shadowView.userInteractionEnabled = YES;
+    self.shadowView.alpha = 0;
     
     UITapGestureRecognizer *tapGesturRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(shadowViewTapClick:)];
     tapGesturRecognizer.delegate = self;
-    [shadowView2 addGestureRecognizer:tapGesturRecognizer];
+    [self.shadowView addGestureRecognizer:tapGesturRecognizer];
+    
+    UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
+    UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
+    
+    blurEffectView.frame = self.shadowView.frame;
+    [self.shadowView addSubview:blurEffectView];
     
     // 筛选View
     BYRightChooseView *rightChooseView = [BYRightChooseView viewFromXib];
     self.rightChooseView = rightChooseView;
+    
     self.rightChooseView.frame = CGRectMake(568, 0, 220, 320);
     self.rightChooseView.backgroundColor = [UIColor whiteColor];
     
-//    UITapGestureRecognizer *tapGesturRecognizerChoose = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(chooseViewTapClick:)];
-//    [rightChooseView addGestureRecognizer:tapGesturRecognizerChoose];
     
-//    self.shadowView = shadowView;
+    [blurEffectView addSubview:self.rightChooseView];
 //    [self.shadowView  addSubview:self.rightChooseView];
-    [self.shadowView2  addSubview:self.rightChooseView];
-    [[UIApplication sharedApplication].keyWindow addSubview:self.shadowView2];
+    [[UIApplication sharedApplication].keyWindow addSubview:self.shadowView];
     
 }
 
@@ -121,30 +120,27 @@ static NSString *BYMusicListCellId = @"BYMusicListCellId";
     [UIView animateWithDuration:0.2 animations:^{
         self.rightChooseView.frame = CGRectMake(348, 0, 220, 320);
     }];
-//    self.shadowView.alpha = 1;
-//    self.shadowView.image = [UIImage imageNamed:@"bg"];
-//    self.shadowView2.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256)/255.0) green:((float)arc4random_uniform(256)/255.0) blue:((float)arc4random_uniform(256)/255.0) alpha:0.6];
-    self.shadowView2.alpha = 0.6;
+    self.shadowView.alpha = 1;
+    self.shadowView.image = [UIImage imageNamed:@"shadow"];
     
 //    [self setBlurEffect:self.shadowView];
 }
 
+
+// 模糊效果
 - (void)setBlurEffect:(UIImageView *)imgView
 {
     UIBlurEffect *blurEffect = [UIBlurEffect effectWithStyle:UIBlurEffectStyleLight];
     UIVisualEffectView *blurEffectView = [[UIVisualEffectView alloc] initWithEffect:blurEffect];
     
     blurEffectView.frame = imgView.frame;
-    [self.view addSubview:blurEffectView];
+    [self.shadowView addSubview:blurEffectView];
 }
 
 - (void)shadowViewTapClick:(id)tap
 {
     BYLogFunc
-//     self.shadowView.alpha = 0;
-    self.shadowView2.alpha = 0;
-//    self.shadowView2.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0];
-    self.shadowView2.backgroundColor = [UIColor colorWithRed:((float)arc4random_uniform(256)/255.0) green:((float)arc4random_uniform(256)/255.0) blue:((float)arc4random_uniform(256)/255.0) alpha:0];
+     self.shadowView.alpha = 0;
     [UIView animateWithDuration:0.2 animations:^{
         self.rightChooseView.frame = CGRectMake(568, 0, 220, 320);
     }];
